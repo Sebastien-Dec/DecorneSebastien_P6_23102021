@@ -23,6 +23,7 @@ mongoose.connect('mongodb+srv://Sebastien:Ej2MoI2bjUxcjAMA@cluster0.s0wth.mongod
     .catch(() => console.log('Connexion à MongoDB échouée!')
 );
 
+// Increase security
 app.use(helmet());
 
 app.use(express.json());
