@@ -1,5 +1,6 @@
 //Importing frameworks and routes
 const express = require('express');
+const helmet = require('helmet');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/users');
 const sauceRoutes = require('./routes/sauce');
@@ -21,6 +22,8 @@ mongoose.connect('mongodb+srv://Sebastien:Ej2MoI2bjUxcjAMA@cluster0.s0wth.mongod
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée!')
 );
+
+app.use(helmet());
 
 app.use(express.json());
 //Specifies the path to signup or login
